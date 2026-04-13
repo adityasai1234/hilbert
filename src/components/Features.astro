@@ -63,15 +63,15 @@ const artifacts = [
   </div>
 </section>
 
-<section class="py-12 bg-muted/30" id="agents">
+<section class="py-12 section-muted" id="agents">
   <div class="mx-auto max-w-4xl px-4 md:px-6">
     <div class="grid gap-12 md:grid-cols-2">
-      <div>
+      <div id="skills">
         <h2 class="font-display text-2xl text-foreground">Skills & Tools</h2>
         <p class="mt-2 text-muted-foreground">How Hilbert searches, remembers, and exports work.</p>
         <div class="mt-6 grid gap-3 sm:grid-cols-2">
           {tools.map(tool => (
-            <div class="p-3 rounded border border-border">
+            <div class="p-3 rounded-md card">
               <h3 class="font-medium text-foreground">{tool.name}</h3>
               <p class="text-sm text-muted-foreground">{tool.description}</p>
             </div>

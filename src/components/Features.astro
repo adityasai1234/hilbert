@@ -1,0 +1,95 @@
+---
+const workflows = [
+  { command: '/deepresearch', description: 'Fixed N rounds with synthesis gate' },
+  { command: '/lit', description: 'Structured academic survey' },
+  { command: '/review', description: 'Peer review simulation' },
+  { command: '/compare', description: 'Side-by-side source analysis' },
+  { command: '/audit', description: 'Paper claims vs. code audit' },
+  { command: '/replicate', description: 'Reproduce published experiments' },
+];
+
+const agents = [
+  { name: 'Researcher', description: 'Parallel search + extraction across papers, web, repos, docs' },
+  { name: 'Reviewer', description: 'Coverage checking and gap detection' },
+  { name: 'Verifier', description: 'Semantic verification with embeddings' },
+  { name: 'Writer', description: 'Report generation with inline citations' },
+];
+
+const tools = [
+  { name: 'ArXiv', description: 'Open paper search and metadata' },
+  { name: 'Semantic Scholar', description: 'Open academic search API' },
+  { name: 'Web Search', description: 'General web queries' },
+  { name: 'Session Search', description: 'Past session retrieval' },
+  { name: 'Preview', description: 'Rendered output panels' },
+];
+
+const artifacts = [
+  { file: 'report.md', description: 'Markdown with inline citations' },
+  { file: 'report.json', description: 'Structured JSON' },
+  { file: 'report.bib', description: 'BibTeX bibliography' },
+  { file: 'report.tex', description: 'LaTeX article' },
+  { file: 'report.mmd', description: 'Mermaid knowledge graph' },
+];
+---
+
+<section class="py-20" id="workflows">
+  <div class="mx-auto max-w-6xl px-4 md:px-6">
+    <div class="grid gap-16 md:grid-cols-2">
+      <div>
+        <h2 class="mb-6 font-display text-3xl tracking-wider text-foreground">Workflows</h2>
+        <p class="mb-6 text-muted-foreground">Slash commands or natural language. Your call.</p>
+        <div class="space-y-3">
+          {workflows.map(wf => (
+            <div class="flex items-center gap-4 rounded-md border border-border p-3">
+              <code class="font-mono text-sm text-primary">{wf.command}</code>
+              <span class="text-sm text-muted-foreground">{wf.description}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h2 class="mb-6 font-display text-3xl tracking-wider text-foreground">Agents</h2>
+        <p class="mb-6 text-muted-foreground">You ask a question. The right team assembles.</p>
+        <div class="space-y-4">
+          {agents.map(agent => (
+            <div>
+              <h3 class="font-medium text-foreground">{agent.name}</h3>
+              <p class="text-sm text-muted-foreground">{agent.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-muted/30" id="agents">
+  <div class="mx-auto max-w-6xl px-4 md:px-6">
+    <div class="grid gap-16 md:grid-cols-2">
+      <div>
+        <h2 class="mb-6 font-display text-3xl tracking-wider text-foreground">Skills & Tools</h2>
+        <p class="mb-6 text-muted-foreground">How Hilbert searches, remembers, and exports work.</p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {tools.map(tool => (
+            <div class="rounded-md border border-border p-3">
+              <h3 class="font-medium text-foreground">{tool.name}</h3>
+              <p class="text-sm text-muted-foreground">{tool.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h2 class="mb-6 font-display text-3xl tracking-wider text-foreground">Output Artifacts</h2>
+        <p class="mb-6 text-muted-foreground">Every research session produces usable exports.</p>
+        <div class="space-y-2">
+          {artifacts.map(artifact => (
+            <div class="flex items-center gap-3">
+              <code class="font-mono text-sm text-primary">{artifact.file}</code>
+              <span class="text-sm text-muted-foreground">{artifact.description}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

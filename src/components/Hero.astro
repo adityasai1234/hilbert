@@ -2,76 +2,45 @@
 const installCommand = 'pip install hilbert';
 ---
 
-<section class="relative overflow-hidden py-20 md:py-32">
-  <div class="mx-auto max-w-6xl px-4 md:px-6">
-    <div class="grid gap-12 md:grid-cols-2 md:gap-8">
-      <div class="flex flex-col justify-center">
-        <h1 class="font-display text-5xl leading-tight tracking-wider text-foreground md:text-7xl">
-          <span class="block">The open source AI</span>
-          <span class="block text-primary">research agent</span>
-        </h1>
-        <p class="mt-6 text-lg text-muted-foreground">
-          Guaranteed termination, crash recovery, and open APIs.
-          All locally on your computer.
-        </p>
-        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-lg transition-colors hover:bg-primary/90"
-          >
-            GitHub
-          </a>
-          <a
-            href="/docs/getting-started/installation"
-            class="inline-flex items-center justify-center rounded-md border border-border bg-background px-6 py-3 text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-muted"
-          >
-            Need just the skills?
-            <span class="ml-2 text-muted-foreground">Install the skills-only bundle</span>
-          </a>
-        </div>
-        <div class="mt-8">
-          <p class="mb-2 text-sm text-muted-foreground">Install command</p>
-          <div class="flex items-center gap-2 rounded-md border border-border bg-muted/50 p-3">
-            <code class="flex-1 font-mono text-sm">{installCommand}</code>
-            <button
-              type="button"
-              class="copy-btn text-muted-foreground hover:text-foreground transition-colors"
-              data-copy={installCommand}
-              aria-label="Copy install command"
-            >
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="relative hidden md:block">
-        <pre class="font-mono text-xs leading-relaxed text-primary"><code>{`
-    _    _      _ _       
-   | |  | |    | | |      
-   | |__| | ___| | | ___  
-   |  __  |/ _ \\ | |/ _ \\ 
-   | |  | |  __/ | | (_) |
-   |_|  |_|\\___|_|_\\___/ 
-                         
-   ✓ Fixed N rounds
-   ✓ SQLite checkpoint 
-   ✓ Open APIs (ArXiv + SS)
-   ✓ BibTeX export
-   ✓ Rich panels
-                         
-   Type: hilbert "topic"
-   → report.md + bib
-                         
-   hilbert continue abc123
-   → Resume checkpoint
-                         
-   hilbert diff a b
-   → Compare sessions
-        `}</code></pre>
+<section class="py-16 md:py-24">
+  <div class="mx-auto max-w-4xl px-4 md:px-6">
+    <h1 class="font-display text-5xl md:text-7xl text-foreground">
+      The open source AI<br/>
+      <span class="text-primary">research agent</span>
+    </h1>
+    <p class="mt-6 text-xl text-muted-foreground max-w-2xl">
+      Guaranteed termination, crash recovery, and open APIs. All locally on your computer.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a
+        href="https://github.com/adityasai1234/hilbert"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary"
+      >
+        GitHub
+      </a>
+      <a
+        href="/docs/getting-started/installation"
+        class="btn-secondary"
+      >
+        Need just the skills? Install the skills-only bundle
+      </a>
+    </div>
+    <div class="mt-8">
+      <p class="text-sm text-muted-foreground mb-2">Install command</p>
+      <div class="flex items-center gap-2 border border-border rounded-md bg-muted p-3">
+        <code class="flex-1 font-mono text-sm">{installCommand}</code>
+        <button
+          type="button"
+          class="copy-btn text-muted-foreground hover:text-foreground"
+          data-copy={installCommand}
+          aria-label="Copy install command"
+        >
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -82,7 +51,7 @@ const installCommand = 'pip install hilbert';
     btn.addEventListener('click', async () => {
       const text = (btn as HTMLElement).dataset.copy || '';
       await navigator.clipboard.writeText(text);
-      btn.innerHTML = '<svg class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>';
+      btn.innerHTML = '<svg class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>';
       setTimeout(() => {
         btn.innerHTML = '<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>';
       }, 2000);

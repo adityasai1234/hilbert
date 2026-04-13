@@ -1,26 +1,26 @@
 ---
 const workflows = [
   { command: '/deepresearch', description: 'Fixed N rounds with synthesis gate' },
-  { command: '/lit', description: 'Structured academic survey' },
-  { command: '/review', description: 'Peer review simulation' },
-  { command: '/compare', description: 'Side-by-side source analysis' },
+  { command: '/lit', description: 'Literature review with consensus mapping' },
+  { command: '/review', description: 'Simulated peer review with severity scores' },
+  { command: '/compare', description: 'Side-by-side source comparison' },
   { command: '/audit', description: 'Paper claims vs. code audit' },
   { command: '/replicate', description: 'Reproduce published experiments' },
 ];
 
 const agents = [
-  { name: 'Researcher', description: 'Parallel search + extraction across papers, web, repos, docs' },
-  { name: 'Reviewer', description: 'Coverage checking and gap detection' },
-  { name: 'Verifier', description: 'Semantic verification with embeddings' },
-  { name: 'Writer', description: 'Report generation with inline citations' },
+  { name: 'Researcher', description: 'Hunts for evidence across papers, the web, repos, and docs' },
+  { name: 'Reviewer', description: 'Grades claims by severity, flags gaps, and suggests revisions' },
+  { name: 'Writer', description: 'Structures notes into briefs, drafts, and paper-style output' },
+  { name: 'Verifier', description: 'Checks every citation, verifies URLs, removes dead links' },
 ];
 
 const tools = [
   { name: 'ArXiv', description: 'Open paper search and metadata' },
   { name: 'Semantic Scholar', description: 'Open academic search API' },
   { name: 'Web Search', description: 'General web queries' },
-  { name: 'Session Search', description: 'Past session retrieval' },
-  { name: 'Preview', description: 'Rendered output panels' },
+  { name: 'Session Search', description: 'Indexed recall across prior research sessions' },
+  { name: 'Preview', description: 'Browser and PDF export of generated artifacts' },
 ];
 
 const artifacts = [
@@ -32,15 +32,15 @@ const artifacts = [
 ];
 ---
 
-<section class="py-20" id="workflows">
-  <div class="mx-auto max-w-6xl px-4 md:px-6">
-    <div class="grid gap-16 md:grid-cols-2">
+<section class="py-12" id="workflows">
+  <div class="mx-auto max-w-4xl px-4 md:px-6">
+    <div class="grid gap-12 md:grid-cols-2">
       <div>
-        <h2 class="mb-6 font-display text-3xl tracking-wider text-foreground">Workflows</h2>
-        <p class="mb-6 text-muted-foreground">Slash commands or natural language. Your call.</p>
-        <div class="space-y-3">
+        <h2 class="font-display text-2xl text-foreground">Workflows</h2>
+        <p class="mt-2 text-muted-foreground">Slash commands or natural language. Your call.</p>
+        <div class="mt-6 space-y-2">
           {workflows.map(wf => (
-            <div class="flex items-center gap-4 rounded-md border border-border p-3">
+            <div class="flex items-center gap-3 p-2 rounded">
               <code class="font-mono text-sm text-primary">{wf.command}</code>
               <span class="text-sm text-muted-foreground">{wf.description}</span>
             </div>
@@ -48,9 +48,9 @@ const artifacts = [
         </div>
       </div>
       <div>
-        <h2 class="mb-6 font-display text-3xl tracking-wider text-foreground">Agents</h2>
-        <p class="mb-6 text-muted-foreground">You ask a question. The right team assembles.</p>
-        <div class="space-y-4">
+        <h2 class="font-display text-2xl text-foreground">Agents</h2>
+        <p class="mt-2 text-muted-foreground">You ask a question. The right team assembles.</p>
+        <div class="mt-6 space-y-4">
           {agents.map(agent => (
             <div>
               <h3 class="font-medium text-foreground">{agent.name}</h3>
@@ -63,15 +63,15 @@ const artifacts = [
   </div>
 </section>
 
-<section class="py-20 bg-muted/30" id="agents">
-  <div class="mx-auto max-w-6xl px-4 md:px-6">
-    <div class="grid gap-16 md:grid-cols-2">
+<section class="py-12 bg-muted/30" id="agents">
+  <div class="mx-auto max-w-4xl px-4 md:px-6">
+    <div class="grid gap-12 md:grid-cols-2">
       <div>
-        <h2 class="mb-6 font-display text-3xl tracking-wider text-foreground">Skills & Tools</h2>
-        <p class="mb-6 text-muted-foreground">How Hilbert searches, remembers, and exports work.</p>
-        <div class="grid gap-4 sm:grid-cols-2">
+        <h2 class="font-display text-2xl text-foreground">Skills & Tools</h2>
+        <p class="mt-2 text-muted-foreground">How Hilbert searches, remembers, and exports work.</p>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
           {tools.map(tool => (
-            <div class="rounded-md border border-border p-3">
+            <div class="p-3 rounded border border-border">
               <h3 class="font-medium text-foreground">{tool.name}</h3>
               <p class="text-sm text-muted-foreground">{tool.description}</p>
             </div>
@@ -79,9 +79,9 @@ const artifacts = [
         </div>
       </div>
       <div>
-        <h2 class="mb-6 font-display text-3xl tracking-wider text-foreground">Output Artifacts</h2>
-        <p class="mb-6 text-muted-foreground">Every research session produces usable exports.</p>
-        <div class="space-y-2">
+        <h2 class="font-display text-2xl text-foreground">Output Artifacts</h2>
+        <p class="mt-2 text-muted-foreground">Every research session produces usable exports.</p>
+        <div class="mt-6 space-y-2">
           {artifacts.map(artifact => (
             <div class="flex items-center gap-3">
               <code class="font-mono text-sm text-primary">{artifact.file}</code>

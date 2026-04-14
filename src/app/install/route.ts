@@ -42,7 +42,7 @@ echo "Get started:"
 echo "  hilbert /deepresearch \\"transformer attention\\""
 echo "  hilbert /lit \\"federated learning privacy\\""
 echo ""
-echo "Docs: https://hilbert.ai/docs"
+echo "Docs: https://hilber.addyhacks.xyz/docs"
 `
 
 export async function GET() {

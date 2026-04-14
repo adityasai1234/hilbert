@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-const installCommand = 'pip install hilbert'
+const installCommand = 'curl -fsSL https://hilbert.ai/install | bash'
 
 export default function Hero({ ascii }: { ascii: string }) {
   const [copied, setCopied] = useState(false)

@@ -16,7 +16,7 @@ export default function Hero({ ascii }: { ascii: string }) {
   return (
     <div className="mx-auto max-w-5xl px-6">
       <section className="flex flex-col items-center gap-8 pb-16 pt-20 text-center">
-        <pre className="overflow-x-auto text-xs leading-tight text-primary sm:text-sm">{ascii}</pre>
+        <pre className="overflow-x-auto font-mono text-xs leading-tight text-primary">{ascii}</pre>
 
         <div className="flex max-w-3xl flex-col gap-4">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
